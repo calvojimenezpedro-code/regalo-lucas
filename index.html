@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,6 +8,7 @@
     <title>Feliz 23, Lucas</title>
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -20,263 +22,636 @@
             overflow-x: hidden;
         }
 
-        /* Fondo */
+        /* FONDO */
+
         .background {
             position: fixed;
             inset: 0;
+
             background:
-                radial-gradient(circle at 20% 20%, rgba(40,80,180,0.25), transparent 30%),
-                radial-gradient(circle at 80% 80%, rgba(180,20,50,0.18), transparent 30%),
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(40,80,180,0.25),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 80% 80%,
+                    rgba(180,20,50,0.18),
+                    transparent 30%
+                ),
+
                 #05070d;
+
             z-index: -2;
         }
 
-        /* Partículas */
+        /* PARTÍCULAS */
+
         .particle {
             position: fixed;
+
             width: 3px;
             height: 3px;
+
             background: white;
+
             border-radius: 50%;
+
             opacity: 0.5;
-            animation: float 8s infinite ease-in-out;
+
+            animation:
+                float 8s infinite ease-in-out;
         }
 
-        .p1 { left: 10%; top: 20%; animation-delay: 0s; }
-        .p2 { left: 25%; top: 70%; animation-delay: 2s; }
-        .p3 { left: 50%; top: 15%; animation-delay: 4s; }
-        .p4 { left: 75%; top: 40%; animation-delay: 1s; }
-        .p5 { left: 90%; top: 75%; animation-delay: 3s; }
-        .p6 { left: 60%; top: 85%; animation-delay: 5s; }
+        .p1 {
+            left: 10%;
+            top: 20%;
+            animation-delay: 0s;
+        }
+
+        .p2 {
+            left: 25%;
+            top: 70%;
+            animation-delay: 2s;
+        }
+
+        .p3 {
+            left: 50%;
+            top: 15%;
+            animation-delay: 4s;
+        }
+
+        .p4 {
+            left: 75%;
+            top: 40%;
+            animation-delay: 1s;
+        }
+
+        .p5 {
+            left: 90%;
+            top: 75%;
+            animation-delay: 3s;
+        }
+
+        .p6 {
+            left: 60%;
+            top: 85%;
+            animation-delay: 5s;
+        }
 
         @keyframes float {
-            0%,100% { transform: translateY(0); opacity: .2; }
-            50% { transform: translateY(-30px); opacity: .8; }
+
+            0%,
+            100% {
+                transform: translateY(0);
+                opacity: 0.2;
+            }
+
+            50% {
+                transform: translateY(-30px);
+                opacity: 0.8;
+            }
+
         }
 
-        /* Pantallas */
+        /* PANTALLAS */
+
         .screen {
+
             min-height: 100vh;
+
             display: flex;
+
             justify-content: center;
+
             align-items: center;
+
             text-align: center;
+
             padding: 30px;
+
         }
 
         .content {
+
             max-width: 800px;
+
             width: 100%;
+
         }
 
-        /* Primera pantalla */
+        /* PANTALLA INICIAL */
 
         .small-title {
+
             letter-spacing: 5px;
+
             text-transform: uppercase;
+
             font-size: 14px;
+
             color: #aaa;
+
             margin-bottom: 20px;
-            animation: fadeUp 1s ease;
+
+            animation:
+                fadeUp 1s ease;
+
         }
 
         h1 {
-            font-size: clamp(70px, 16vw, 170px);
-            line-height: .8;
+
+            font-size:
+                clamp(
+                    70px,
+                    16vw,
+                    170px
+                );
+
+            line-height: 0.8;
+
             font-weight: 900;
-            background: linear-gradient(135deg, #ffffff, #8ea8ff);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffffff,
+                    #8ea8ff
+                );
+
             -webkit-background-clip: text;
+
             color: transparent;
-            animation: fadeUp 1.2s ease;
+
+            animation:
+                fadeUp 1.2s ease;
+
         }
 
         .birthday {
-            font-size: clamp(25px, 5vw, 50px);
+
+            font-size:
+                clamp(
+                    25px,
+                    5vw,
+                    50px
+                );
+
             margin-top: 25px;
+
             font-weight: 700;
-            animation: fadeUp 1.5s ease;
+
+            animation:
+                fadeUp 1.5s ease;
+
         }
 
-        .intro {
-            color: #aaa;
-            margin-top: 20px;
-            font-size: 18px;
-            animation: fadeUp 1.8s ease;
-        }
+        /* BOTONES */
 
         .button {
+
             margin-top: 45px;
-            padding: 18px 38px;
+
+            padding:
+                18px 38px;
+
             border: none;
+
             border-radius: 50px;
+
             background: white;
+
             color: #05070d;
+
             font-size: 16px;
+
             font-weight: bold;
+
             cursor: pointer;
-            transition: .3s;
-            box-shadow: 0 10px 40px rgba(255,255,255,.15);
+
+            transition: 0.3s;
+
+            box-shadow:
+                0 10px 40px
+                rgba(255,255,255,0.15);
+
         }
 
         .button:hover {
+
             transform: scale(1.07);
-            box-shadow: 0 10px 50px rgba(255,255,255,.3);
+
+            box-shadow:
+                0 10px 50px
+                rgba(255,255,255,0.3);
+
         }
 
-        /* Segunda pantalla */
+        /* REGALO */
 
         #gift {
+
             display: none;
+
         }
 
         .gift-card {
-            background: rgba(255,255,255,.07);
-            border: 1px solid rgba(255,255,255,.15);
-            backdrop-filter: blur(15px);
-            padding: 45px 30px;
+
+            background:
+                rgba(255,255,255,0.07);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.15);
+
+            backdrop-filter:
+                blur(15px);
+
+            padding:
+                45px 30px;
+
             border-radius: 30px;
-            box-shadow: 0 20px 80px rgba(0,0,0,.5);
-            animation: appear 1s ease;
+
+            box-shadow:
+                0 20px 80px
+                rgba(0,0,0,0.5);
+
+            animation:
+                appear 1s ease;
+
         }
 
         .gift-label {
+
             color: #aaa;
+
             letter-spacing: 4px;
+
             font-size: 13px;
+
             text-transform: uppercase;
+
         }
 
         .gift-title {
-            font-size: clamp(35px, 7vw, 65px);
-            margin: 20px 0;
+
+            font-size:
+                clamp(
+                    35px,
+                    7vw,
+                    65px
+                );
+
+            margin:
+                20px 0;
+
             font-weight: 900;
+
         }
 
+        /* PARTIDO */
+
         .match {
-            margin: 35px 0;
+
+            margin:
+                35px 0;
+
             display: flex;
+
             justify-content: center;
+
             align-items: center;
+
             gap: 25px;
+
             flex-wrap: wrap;
+
         }
 
         .team {
+
             font-size: 24px;
+
             font-weight: bold;
+
             max-width: 200px;
+
         }
 
         .vs {
+
             font-size: 18px;
+
             color: #888;
+
             font-weight: bold;
+
         }
 
         .date {
+
             font-size: 22px;
+
             font-weight: bold;
+
             margin-top: 25px;
+
         }
 
         .place {
+
             color: #aaa;
+
             margin-top: 10px;
+
         }
 
+        /* ENTRADAS */
+
         .tickets {
+
             margin-top: 35px;
+
             padding: 20px;
+
             border-radius: 20px;
-            background: rgba(255,255,255,.06);
+
+            background:
+                rgba(255,255,255,0.06);
+
         }
 
         .tickets strong {
+
             display: block;
+
             font-size: 25px;
+
             margin-bottom: 8px;
+
         }
 
-        /* Cervezas */
+        /* FOTO REGALO */
+
+        .gift-photo {
+
+            width: 100%;
+
+            max-width: 600px;
+
+            max-height: 450px;
+
+            object-fit: cover;
+
+            border-radius: 20px;
+
+            margin-top: 30px;
+
+            box-shadow:
+                0 15px 50px
+                rgba(0,0,0,0.5);
+
+        }
+
+        /* PREVIA */
 
         .beer {
+
             margin-top: 35px;
+
             padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,.1);
+
+            border-top:
+                1px solid
+                rgba(255,255,255,0.1);
+
         }
 
         .beer-title {
+
             font-size: 25px;
+
             font-weight: bold;
+
         }
 
         .beer-text {
+
             margin-top: 10px;
+
             color: #aaa;
+
+            font-size: 17px;
+
+            line-height: 1.5;
+
         }
 
-        /* Animaciones */
+        /* BOTÓN FINAL */
+
+        .final-button {
+
+            margin-top: 45px;
+
+        }
+
+        /* SORPRESA FINAL */
+
+        #final {
+
+            display: none;
+
+        }
+
+        .final-card {
+
+            background:
+                rgba(255,255,255,0.07);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.15);
+
+            backdrop-filter:
+                blur(15px);
+
+            padding:
+                45px 30px;
+
+            border-radius: 30px;
+
+            box-shadow:
+                0 20px 80px
+                rgba(0,0,0,0.5);
+
+            animation:
+                appear 1s ease;
+
+        }
+
+        .final-title {
+
+            font-size:
+                clamp(
+                    35px,
+                    7vw,
+                    60px
+                );
+
+            font-weight: 900;
+
+            margin-bottom: 25px;
+
+        }
+
+        .final-text {
+
+            color: #aaa;
+
+            font-size: 18px;
+
+            margin-bottom: 25px;
+
+        }
+
+        .final-photo {
+
+            width: 100%;
+
+            max-width: 650px;
+
+            max-height: 600px;
+
+            object-fit: contain;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 15px 60px
+                rgba(0,0,0,0.6);
+
+        }
+
+        /* ANIMACIONES */
 
         @keyframes fadeUp {
+
             from {
+
                 opacity: 0;
-                transform: translateY(30px);
+
+                transform:
+                    translateY(30px);
+
             }
+
             to {
+
                 opacity: 1;
-                transform: translateY(0);
+
+                transform:
+                    translateY(0);
+
             }
+
         }
 
         @keyframes appear {
+
             from {
+
                 opacity: 0;
-                transform: scale(.9) translateY(30px);
+
+                transform:
+                    scale(0.9)
+                    translateY(30px);
+
             }
+
             to {
+
                 opacity: 1;
-                transform: scale(1) translateY(0);
+
+                transform:
+                    scale(1)
+                    translateY(0);
+
             }
+
         }
 
-        /* Confeti */
+        /* CONFETI */
 
         .confetti {
+
             position: fixed;
+
             width: 8px;
+
             height: 12px;
+
             top: -20px;
-            animation: fall 4s linear forwards;
+
+            animation:
+                fall 4s linear forwards;
+
             z-index: 10;
+
         }
 
         @keyframes fall {
+
             to {
-                transform: translateY(110vh) rotate(720deg);
+
+                transform:
+                    translateY(110vh)
+                    rotate(720deg);
+
             }
+
         }
+
+        /* MÓVIL */
 
         @media (max-width: 600px) {
 
-            .gift-card {
-                padding: 35px 20px;
+            .gift-card,
+            .final-card {
+
+                padding:
+                    35px 20px;
+
             }
 
             .team {
+
                 font-size: 19px;
+
             }
 
             .match {
+
                 gap: 12px;
+
             }
 
         }
+
     </style>
+
 </head>
+
 
 <body>
 
+
+<!-- FONDO -->
+
 <div class="background"></div>
+
+
+<!-- PARTÍCULAS -->
 
 <div class="particle p1"></div>
 <div class="particle p2"></div>
@@ -286,28 +661,45 @@
 <div class="particle p6"></div>
 
 
+<!-- ================================= -->
 <!-- PANTALLA INICIAL -->
+<!-- ================================= -->
 
-<section class="screen" id="home">
+<section
+    class="screen"
+    id="home"
+>
 
     <div class="content">
 
         <div class="small-title">
+
             Hoy es un día importante
+
         </div>
 
-        <h1>23</h1>
+
+        <h1>
+
+            23
+
+        </h1>
+
 
         <div class="birthday">
+
             FELIZ CUMPLEAÑOS, LUCAS
+
         </div>
 
-        <div class="intro">
-            Aunque técnicamente el regalo no empieza aquí...
-        </div>
 
-        <button class="button" onclick="openGift()">
+        <button
+            class="button"
+            onclick="openGift()"
+        >
+
             ABRIR REGALO
+
         </button>
 
     </div>
@@ -315,67 +707,141 @@
 </section>
 
 
+<!-- ================================= -->
 <!-- REGALO -->
+<!-- ================================= -->
 
-<section class="screen" id="gift">
+<section
+    class="screen"
+    id="gift"
+>
 
     <div class="content">
 
+
         <div class="gift-card">
 
+
             <div class="gift-label">
-                Tu regalo
+
+                TU REGALO
+
             </div>
 
+
             <div class="gift-title">
+
                 NOS VAMOS AL PARTIDO
+
             </div>
+
+
+            <!-- PARTIDO -->
 
             <div class="match">
 
+
                 <div class="team">
+
                     REAL MADRID
+
                 </div>
+
 
                 <div class="vs">
+
                     VS
+
                 </div>
+
 
                 <div class="team">
+
                     PANATHINAIKOS
+
                 </div>
 
+
             </div>
+
+
+            <!-- FECHA -->
 
             <div class="date">
+
                 MIÉRCOLES · 4 NOVIEMBRE
+
             </div>
 
+
             <div class="place">
+
                 Palacio de los Deportes · Madrid
+
             </div>
+
+
+            <!-- ENTRADAS -->
 
             <div class="tickets">
 
-                <strong>2 ENTRADAS</strong>
 
-                Para disfrutar juntos de un partidazo de EuroLeague.
+                <strong>
+
+                    2 ENTRADAS
+
+                </strong>
+
+
+                Para disfrutar juntos
+                de un partidazo de EuroLeague.
+
 
             </div>
+
+
+            <!-- FOTO DEL REGALO -->
+
+            <img
+                src="foto-regalo.jpeg"
+                alt="Foto del regalo"
+                class="gift-photo"
+            >
+
+
+            <!-- PREVIA -->
 
             <div class="beer">
 
+
                 <div class="beer-title">
+
                     Y POR SUPUESTO...
+
                 </div>
+
 
                 <div class="beer-text">
-                    La previa corre de nuestra cuenta.
-                    <br><br>
-                    CERVEZAS INCLUIDAS.
+
+                    La previa corre de mi cuenta.
+
                 </div>
 
+
             </div>
+
+
+            <!-- BOTÓN FINAL -->
+
+            <button
+                class="button final-button"
+                onclick="openFinal()"
+            >
+
+                SORPRESA FINAL
+
+            </button>
+
 
         </div>
 
@@ -384,53 +850,167 @@
 </section>
 
 
+<!-- ================================= -->
+<!-- SORPRESA FINAL -->
+<!-- ================================= -->
+
+<section
+    class="screen"
+    id="final"
+>
+
+    <div class="content">
+
+
+        <div class="final-card">
+
+
+            <div class="final-title">
+
+                SORPRESA
+
+            </div>
+
+
+            <div class="final-text">
+
+                Y esto todavía no era todo...
+
+            </div>
+
+
+            <!-- FOTO FINAL -->
+
+            <img
+                src="foto-final.jpg"
+                alt="Sorpresa final"
+                class="final-photo"
+            >
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================================= -->
+<!-- JAVASCRIPT -->
+<!-- ================================= -->
+
 <script>
+
 
 function openGift() {
 
-    // Ocultar primera pantalla
-    document.getElementById("home").style.display = "none";
 
-    // Mostrar regalo
-    document.getElementById("gift").style.display = "flex";
+    document
+        .getElementById("home")
+        .style.display = "none";
 
-    // Ir arriba
+
+    document
+        .getElementById("gift")
+        .style.display = "flex";
+
+
     window.scrollTo({
+
         top: 0,
+
         behavior: "smooth"
+
     });
 
-    // Crear confeti
+
     createConfetti();
+
 }
+
+
+
+function openFinal() {
+
+
+    document
+        .getElementById("gift")
+        .style.display = "none";
+
+
+    document
+        .getElementById("final")
+        .style.display = "flex";
+
+
+    window.scrollTo({
+
+        top: 0,
+
+        behavior: "smooth"
+
+    });
+
+
+    createConfetti();
+
+}
+
 
 
 function createConfetti() {
 
-    for (let i = 0; i < 120; i++) {
 
-        const confetti = document.createElement("div");
+    for (
+        let i = 0;
+        i < 120;
+        i++
+    ) {
 
-        confetti.classList.add("confetti");
 
-        confetti.style.left = Math.random() * 100 + "vw";
+        const confetti =
+            document.createElement("div");
+
+
+        confetti.classList.add(
+            "confetti"
+        );
+
+
+        confetti.style.left =
+            Math.random() * 100 + "vw";
+
 
         confetti.style.animationDelay =
             Math.random() * 2 + "s";
 
-        confetti.style.transform =
-            "rotate(" + Math.random() * 360 + "deg)";
 
-        document.body.appendChild(confetti);
+        confetti.style.transform =
+            "rotate("
+            + Math.random() * 360
+            + "deg)";
+
+
+        document.body.appendChild(
+            confetti
+        );
+
 
         setTimeout(() => {
+
             confetti.remove();
+
         }, 6000);
+
     }
 
 }
 
+
 </script>
 
+
 </body>
+
 </html>
+```
